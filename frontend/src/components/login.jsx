@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles/login.css'
-import BeatLine from '../assets/BeatLineWhite.svg'
+import BeatLine from '../assets/hero-logo.svg'
 
 
 function Login() {

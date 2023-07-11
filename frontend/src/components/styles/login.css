@@ -10,7 +10,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 10px;
+}
+.main .beat-line img {
+  width: 200px;
+  height: 200px;
 }
 .main .login-container {
   background-color: #292929;
