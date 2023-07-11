@@ -5,7 +5,7 @@ import BeatLine from '../assets/hero-logo.svg'
 function Register() {
   return (
     <div className='main'>
-      <div className="beat-line">
+      <div className="beat-line hero-logo">
         <img src={BeatLine} alt="" />
       </div>
       <div className='register-container'>
