@@ -2,12 +2,19 @@
   border: 1px solid red;
 } */
 .app{
-  background-color: black !important;
+  background-color: #151515 ;
   width: 100vw;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.registration-form{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .intro-text{
@@ -50,7 +57,7 @@
   align-items: center;
   position: fixed;
   top: 60vh;
-  right: -3.5rem;
+  right: -55px;
   background-color: #bac5f4;
   width: 29vw;
   height: 15vh;
@@ -60,12 +67,13 @@
  margin-left: 1rem;
 }
 .back-btn-bg{
+  z-index: 999;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: fixed;
   top: 60vh;
-  left: -3.5rem;
+  left: -55px;
   background-color: #bac5f4;
   width: 29vw;
   height: 15vh;

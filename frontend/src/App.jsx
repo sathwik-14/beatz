@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import logoLight from "./assets/logo-light.svg";
 import introText from "./assets/intro-text.png";
 import heroLogo from "./assets/hero-logo.png";
+import Register from "./components/register";
 import "./App.css";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   const [isLeftAnimated, setIsLeftAnimated] = useState(false);
   const [isRightAnimated, setIsRightAnimated] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
+  const [showRegistration, setShowRegistration] = useState(false);
 
   const toggleRight = () => {
     setShowRight(!showRight);
@@ -28,6 +30,7 @@ function App() {
 
   const goBack = () => {
     setIsLeftAnimated(false);
+    setShowRegistration(false);
     setFadeIn(true)
     setTimeout(() => {
       toggleLeft();
@@ -39,11 +42,13 @@ function App() {
   const goNext = () => {
     setIsRightAnimated(false);
     setFadeIn(false);
+    setShowRegistration(true);
     setTimeout(() => {
       toggleRight();
       setShowLeft(true);
       setIsLeftAnimated(true);
       toggleLeft();
+      showRegistration(true);
     }, 190);
   };
 
@@ -69,6 +74,7 @@ function App() {
           Rythm into our new World Sign in now
         </p>
       )}
+
 
       {showRight ? (
         <div
@@ -103,6 +109,8 @@ function App() {
       ) : (
         <></>
       )}
+       {showRegistration ? (<div className="registration-form animate__animated animate__fadeInRight">
+      <Register/></div>):(<></>)}
     </div>
   );
 }
