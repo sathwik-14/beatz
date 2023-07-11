@@ -1,0 +1,57 @@
+.home {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: azure;
+}
+.home .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 45px;
+  background: #292929;
+  padding: 10px;
+}
+.home .header .bot img {
+  width: 20px;
+  height: 20px;
+}
+.home .header .logo img {
+  width: 100px;
+  height: 25px;
+}
+.home .header .message img {
+  width: 20px;
+  height: 20px;
+}
+.home .footer-nav {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+  background: #292929;
+  padding: 5px 20px;
+}
+.home .footer-nav .nav-logo img {
+  width: 30px;
+  height: 25px;
+}
+.home .footer-nav .home-icon img {
+  width: 18px;
+  height: 20px;
+}
+.home .footer-nav .search-icon img {
+  width: 18px;
+  height: 20px;
+}
+.home .footer-nav .nav-heart img {
+  width: 18px;
+  height: 20px;
+}
+.home .footer-nav .nav-profile img {
+  width: 18px;
+  height: 20px;
+}/*# sourceMappingURL=home.css.map */
