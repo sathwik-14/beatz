@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import logoLight from "./assets/logo-light.svg";
+import introText from "./assets/intro-text.png";
+import heroLogo from "./assets/hero-logo.png";
 import "./App.css";
 
 function App() {
@@ -8,8 +9,7 @@ function App() {
   const [showLeft, setShowLeft] = useState(false);
   const [isLeftAnimated, setIsLeftAnimated] = useState(false);
   const [isRightAnimated, setIsRightAnimated] = useState(false);
-  const [fadeInRight, setFadeInRight] = useState("animate__fadeInRight");
-  const [fadeOutRight, setFadeOutRight] = useState("animate__fadeOutRight");
+  const [fadeIn, setFadeIn] = useState(false);
 
   const toggleRight = () => {
     setShowRight(!showRight);
@@ -19,6 +19,7 @@ function App() {
   };
 
   useEffect(() => {
+    setFadeIn(true);
     setTimeout(() => {
       toggleRight();
       setIsRightAnimated(true);
@@ -27,7 +28,7 @@ function App() {
 
   const goBack = () => {
     setIsLeftAnimated(false);
-    
+    setFadeIn(true)
     setTimeout(() => {
       toggleLeft();
       setShowRight(true);
@@ -37,7 +38,7 @@ function App() {
   };
   const goNext = () => {
     setIsRightAnimated(false);
-    
+    setFadeIn(false);
     setTimeout(() => {
       toggleRight();
       setShowLeft(true);
@@ -48,6 +49,27 @@ function App() {
 
   return (
     <div className="app">
+      {fadeIn ? (
+        <div className="logos d-flex flex-column animate__animated animate__fadeInLeft">
+          <img src={logoLight} alt="logo" className="logo " />
+          <img src={heroLogo} alt="hero-logo" className="hero-logo " />
+        </div>
+      ) : (
+        <div className="logos d-flex flex-column animate__animated animate__fadeOutLeft">
+          <img src={logoLight} alt="logo" className="logo " />
+          <img src={heroLogo} alt="hero-logo" className="hero-logo " />
+        </div>
+      )}
+      {fadeIn ? (
+        <p className="intro-text animate__animated animate__fadeInLeft  ">
+          Rythm into our new World Sign in now
+        </p>
+      ) : (
+        <p className="intro-text animate__animated animate__fadeOutLeft  ">
+          Rythm into our new World Sign in now
+        </p>
+      )}
+
       {showRight ? (
         <div
           className={
@@ -58,7 +80,7 @@ function App() {
         >
           <div
             onClick={goNext}
-            className="fa-solid fa-arrow-right text-white next-btn fa-2xl"
+            className="fa-solid fa-arrow-right text-dark next-btn fa-xl"
           ></div>
         </div>
       ) : (
@@ -75,7 +97,7 @@ function App() {
         >
           <div
             onClick={goBack}
-            className="fa-solid fa-arrow-left text-white back-btn fa-2xl"
+            className="fa-solid fa-arrow-left text-dark back-btn fa-2xl"
           ></div>
         </div>
       ) : (
