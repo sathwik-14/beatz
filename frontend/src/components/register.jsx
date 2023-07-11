@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles/register.css'
-import BeatLine from '../assets/BeatLineWhite.svg'
+import BeatLine from '../assets/hero-logo.svg'
 
 function Register() {
   return (
