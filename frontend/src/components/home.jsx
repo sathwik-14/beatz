@@ -1,9 +1,12 @@
 import React from 'react'
 
-function home() {
+function Home() {
   return (
-    <div>home</div>
-  )
+    <div className='main'>
+        
+    </div>
+
+    )
 }
 
-export default home
+export default Home
