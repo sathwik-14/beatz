@@ -1,35 +1,88 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [showRight, setShowRight] = useState(false);
+  const [showLeft, setShowLeft] = useState(false);
+  const [isLeftAnimated, setIsLeftAnimated] = useState(false);
+  const [isRightAnimated, setIsRightAnimated] = useState(false);
+  const [fadeInRight, setFadeInRight] = useState("animate__fadeInRight");
+  const [fadeOutRight, setFadeOutRight] = useState("animate__fadeOutRight");
+
+  const toggleRight = () => {
+    setShowRight(!showRight);
+  };
+  const toggleLeft = () => {
+    setShowLeft(!showLeft);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      toggleRight();
+      setIsRightAnimated(true);
+    }, 250);
+  }, []);
+
+  const goBack = () => {
+    setIsLeftAnimated(false);
+    
+    setTimeout(() => {
+      toggleLeft();
+      setShowRight(true);
+      setIsRightAnimated(true);
+      toggleRight();
+    }, 190);
+  };
+  const goNext = () => {
+    setIsRightAnimated(false);
+    
+    setTimeout(() => {
+      toggleRight();
+      setShowLeft(true);
+      setIsLeftAnimated(true);
+      toggleLeft();
+    }, 190);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app">
+      {showRight ? (
+        <div
+          className={
+            isRightAnimated
+              ? "animate__animated animate__fadeInRight  next-btn-bg"
+              : "animate__animated animate__fadeOutRight next-btn-bg"
+          }
+        >
+          <div
+            onClick={goNext}
+            className="fa-solid fa-arrow-right text-white next-btn fa-2xl"
+          ></div>
+        </div>
+      ) : (
+        <></>
+      )}
+
+      {showLeft ? (
+        <div
+          className={
+            isLeftAnimated
+              ? "animate__animated animate__fadeInLeft  back-btn-bg"
+              : "animate__animated animate__fadeOutLeft back-btn-bg"
+          }
+        >
+          <div
+            onClick={goBack}
+            className="fa-solid fa-arrow-left text-white back-btn fa-2xl"
+          ></div>
+        </div>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
