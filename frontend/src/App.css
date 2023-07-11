@@ -1,11 +1,9 @@
 /* *{
   border: 1px solid red;
 } */
-
 .app{
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .next-btn-bg{

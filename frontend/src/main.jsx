@@ -10,7 +10,7 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App/>} />
+      <Route path="/" element={<App/>} ></Route>
       <Route path="/home" element={<Home/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element={<Register/>} />
