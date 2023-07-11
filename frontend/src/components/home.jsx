@@ -2,8 +2,11 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>home</div>
-  )
+    <div className='main'>
+        
+    </div>
+
+    )
 }
 
 export default Home
