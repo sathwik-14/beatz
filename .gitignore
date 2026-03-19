@@ -1,0 +1,11 @@
+# Environment variables
+.env
+
+# OpenClaw workspace metadata
+.openclaw/
+
+# Memory files (optional, if you want to keep them local)
+# memory/
+
+# Node modules (if you ever move the beatz folder out)
+node_modules/
